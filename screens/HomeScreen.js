@@ -5,7 +5,7 @@ import Carouse from '../components/Carouse'
 
 const HomeScreen = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{marginTop: 30}}>
         {/* SearchBar */}
         <View style={{ flexDirection: 'row', alignItems: "center", justifyContent: "space-between", borderWidth: 1, margin: 10, padding: 10, borderColor: "#C0C0C0", borderRadius: 7, }}>
             <TextInput 

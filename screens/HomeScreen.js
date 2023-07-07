@@ -2,6 +2,8 @@ import { SafeAreaView, StyleSheet, Text, TextInput, View } from 'react-native'
 import React from 'react'
 import { AntDesign } from '@expo/vector-icons'
 import Carouse from '../components/Carouse'
+import FoodTypes from '../components/FoodTypes'
+import QuickFood from '../components/QuickFood'
 
 const HomeScreen = () => {
   return (
@@ -14,7 +16,14 @@ const HomeScreen = () => {
             <AntDesign name='search1' size={24} color="#E52B50" />
         </View>
 
+      {/* Carousel Items */}
         <Carouse />
+
+      {/* Food Items Types */}
+        <FoodTypes />
+
+      {/* Quick Food Section */}
+        <QuickFood />
     </SafeAreaView>
   )
 }

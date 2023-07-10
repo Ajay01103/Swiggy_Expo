@@ -19,7 +19,7 @@ export default [
     {
         id:"2",
         image:"https://b.zmtcdn.com/data/pictures/chains/0/18416840/297e6c82fbf1b14832189765dd0bdcc5_o2_featured_v2.jpg",
-        name:"Chocklate Ice Cream",
+        name:"Ice Cream",
         rating:4.1,
         time:"25-35",
         offer:"55%",

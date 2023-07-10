@@ -12,7 +12,7 @@ const Carouse = () => {
       ];
 
   return (
-    <View style={{ marginTop: 8}}>
+    <View style={{ marginTop: 16}}>
       <SliderBox
       images={images}
       autoplay

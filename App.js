@@ -4,7 +4,7 @@ import HomeScreen from './screens/HomeScreen';
 
 export default function App() {
   return (
-    <SafeAreaView style={{ paddingTop: 20}}>
+    <SafeAreaView style={{ marginTop: 20}}>
       <HomeScreen />
     </SafeAreaView>
   );

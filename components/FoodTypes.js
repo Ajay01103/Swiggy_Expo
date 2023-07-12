@@ -48,7 +48,8 @@ const FoodTypes = () => {
 
 
   return (
-    <View>
+    <View style={{ padding: 10}}>
+        <Text style={{ fontSize: 16, fontWeight: "500"}}>What's on your mind</Text>
        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           {types.map((item, index) => (
             <TouchableOpacity style={{margin: 10}} key={index}>

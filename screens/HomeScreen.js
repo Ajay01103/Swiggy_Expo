@@ -12,14 +12,14 @@ import MenuItems from '../components/MenuItems'
 const HomeScreen = () => {
   const data = hotels;
   return (
-    <View style={{ marginTop: 20}}>
+    <ScrollView style={{ backgroundColor: "#fff"}}>
         {/* SearchBar */}
-        <View style={{ flexDirection: 'row', alignItems: "center", justifyContent: "space-between", borderWidth: 1, margin: 10, padding: 10, borderColor: "#C0C0C0", borderRadius: 7, }}>
+        {/* <View style={{ flexDirection: 'row', alignItems: "center", justifyContent: "space-between", borderWidth: 1, margin: 10, padding: 10, borderColor: "#C0C0C0", borderRadius: 7, }}>
             <TextInput 
             style={{ fontSize: 17 }}
             placeholder='Search for restaurant' />
             <AntDesign name='search1' size={24} color="#E52B50" />
-        </View>
+        </View> */}
 
       {/* Carousel Items */}
          <Carouse />
@@ -58,7 +58,7 @@ const HomeScreen = () => {
           <MenuItems key={index} item={item} />
         ))}
       </ScrollView>
-    </View>
+    </ScrollView>
   )
 }
 

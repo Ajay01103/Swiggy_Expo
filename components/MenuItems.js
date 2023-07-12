@@ -2,11 +2,13 @@ import { View, Text, Image, Pressable, ScrollView, ImageBackground } from 'react
 import { AntDesign } from "@expo/vector-icons"
 import { MaterialIcons } from "@expo/vector-icons"
 import { MaterialCommunityIcons } from "@expo/vector-icons"
+import { useNavigation } from '@react-navigation/native'
 
 const MenuItems = ({ item }) => {
+  const navigation = useNavigation()
   return (
     <View style={{ margin: 8}}>
-      <Pressable style={{ flexDirection: "row", }}>
+      <Pressable onPress={() => navigation.navigate("MenuScreen")} style={{ flexDirection: "row", }}>
         <View>
             <ImageBackground
             imageStyle={{ borderRadius: 6 }}

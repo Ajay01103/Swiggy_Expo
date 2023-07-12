@@ -1,7 +1,7 @@
 export default [
     {
         id:"0",
-        image:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/e0vvulfbahjxjz6k4uwi",
+        image:"https://b.zmtcdn.com/data/pictures/9/20543429/ffcf86070365bc2940b7f188a7fea99c_o2_featured_v2.jpg",
         name:"Meghana Foods",
         rating:4.4,
         time:"30-40",
@@ -130,8 +130,8 @@ export default [
     },
     {
         id:"1",
-        image:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/lvxyt7qdchtmzh8telc2",
-        name:"Beijing Bites",
+        image:"https://b.zmtcdn.com/data/pictures/chains/9/20052809/9361ee4d0e18519da526b87f81f067ae_o2_featured_v2.jpg",
+        name:"Haldiram's",
         rating:4.2,
         time:"30-40",
         adress:"Richmond Town, Ashok Nagar ",
@@ -142,11 +142,11 @@ export default [
     },
     {
         id:"2",
-        image:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/pbtwdcg4rcktb89hrxbc",
-        name:"Behrouz Biriyani",
+        image:"https://b.zmtcdn.com/data/pictures/6/19235126/e5c69b0c29d5b51fa619323a69b06b2e_o2_featured_v2.jpg",
+        name:"Foodz Planet",
         rating:4.3,
         time:"45-50",
-        adress:"Residency Road, Shantinagar",
+        adress:"Tilak Nagar, Delhi",
         ratings:"100",
         cost_for_two:430,
         cuisines:"north Indian, South Indian"

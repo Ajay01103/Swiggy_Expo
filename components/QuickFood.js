@@ -21,11 +21,11 @@ const QuickFood = () => {
               <Text style={{ marginTop: 10, marginLeft: 8, fontSize: 16, fontWeight: "500" }}>
                     {item.name}
               </Text>
-              <View style={{ flexDirection: "row", alignItems: "center"}}>
+              <View style={{ flexDirection: "row", alignItems: "center", marginTop: 6}}>
                 <MaterialIcons name='stars' size={24} color="green" />
                 <Text style={{ marginLeft: 3}}>{item.rating}</Text>
                 {/* <Text style={{ marginLeft: 3}}>*</Text> */}
-                <Text style={{ marginLeft: 10}}>{item.time}mins</Text>
+                <Text style={{ marginLeft: 10, fontWeight:"400"}}>{item.time}mins</Text>
               </View>
             </Pressable>
         ))}

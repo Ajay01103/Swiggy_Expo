@@ -1,11 +1,11 @@
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView } from 'react-native';
 import HomeScreen from './screens/HomeScreen';
 
 
 export default function App() {
   return (
-    <SafeAreaView style={{ marginTop: 20}}>
+    <ScrollView style={{ marginTop: 4}}>
       <HomeScreen />
-    </SafeAreaView>
+    </ScrollView>
   );
 }

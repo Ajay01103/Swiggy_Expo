@@ -7,8 +7,19 @@ import { useNavigation } from '@react-navigation/native'
 const MenuItems = ({ item }) => {
   const navigation = useNavigation()
   return (
-    <View style={{ margin: 8}}>
-      <Pressable onPress={() => navigation.navigate("MenuScreen")} style={{ flexDirection: "row", }}>
+    <View style={{ margin: 10}}>
+      <Pressable onPress={() => navigation.navigate("MenuScreen", {
+        id: item.id,
+        name: item.name,
+        time: item.time,
+        image: item.image,
+        rating: item.rating,
+        adress: item.adress,
+        cost_of_two: item.cost_for_two,
+        cuisines: item.cuisines,
+        menu: item.menu
+      })} 
+      style={{ flexDirection: "row", }}>
         <View>
             <ImageBackground
             imageStyle={{ borderRadius: 6 }}

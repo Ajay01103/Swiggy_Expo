@@ -11,7 +11,7 @@ const Stack = createNativeStackNavigator();
 
 function LogoTitle() {
   return (
-    <View style={{ flexDirection: 'row', backgroundColor: "#D3D3D3", width: "94%", alignItems: "center", justifyContent: "space-between", borderWidth: 1, margin: 4, marginTop: 10, padding: 10, borderColor: "#C0C0C0", borderRadius: 7, }}>
+    <View style={{ flexDirection: 'row', width: "94%", alignItems: "center", justifyContent: "space-between", borderWidth: 1, margin: 4, marginTop: 10, padding: 10, borderColor: "#C0C0C0", borderRadius: 7, }}>
             <TextInput 
             style={{ fontSize: 17 }}
             placeholder='Search for restaurant' />
@@ -25,7 +25,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} options={{ headerTitle: (props) => <LogoTitle {...props} />}} />
+        <Stack.Screen name="Home" component={HomeScreen} options={{ headerTitle: (props) => <LogoTitle {...props} /> }} />
         <Stack.Screen name='MenuScreen' component={MenuScreen} options={{ headerShown: false}} />
       </Stack.Navigator>
     </NavigationContainer>

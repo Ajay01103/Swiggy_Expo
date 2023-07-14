@@ -1,10 +1,28 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text, Pressable, Image } from 'react-native'
+import { FontAwesome } from "@expo/vector-icons"
 
-const MenuComponent = () => {
+const MenuComponent = ({food}) => {
   return (
     <View>
-      <Text>MenuComponent</Text>
+      <Pressable style={{ margin: 10, flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
+        <View>
+          <Text>{food.name}</Text>
+          <Text>{food.price}</Text>
+          <Text style={{ marginTop: 6}}>{
+            [0, 0, 0, 0, 0].map((en, i) => (
+              <FontAwesome name={i < Math.floor(food.rating) ? "star" : "star-o"} size={15} color="#FFD700" />
+            ))
+            }
+          </Text>
+          <Text style={{ width: 180}}>
+            {food.description.length > 30 ? food.description.substr(0, 65) + "..." : food.description}
+          </Text>
+        </View>
+
+        <Pressable>
+          <Image source={{ uri: food.image}} style={{ width: 130, height: 130, borderRadius: 8}} />
+        </Pressable>
+      </Pressable>
     </View>
   )
 }

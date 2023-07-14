@@ -55,7 +55,7 @@ const MenuScreen = () => {
             <View style={{ margin: 6, flexDirection: "row", justifyContent: "space-between", alignItems: "center"}}>
             <MaterialIcons name="delivery-dining" size={28} color="black" />
             <Text>0-3 Kms</Text>
-            <Text>3$ Delivery Charge</Text>
+            <Text>30₹ Delivery Charge</Text>
             </View>
           </View>
         </View>

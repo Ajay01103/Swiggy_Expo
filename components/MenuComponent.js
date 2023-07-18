@@ -6,7 +6,7 @@ const MenuComponent = ({food}) => {
     <View>
       <Pressable style={{ margin: 10, flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
         <View>
-          <Text>{food.name}</Text>
+          <Text style={{ fontSize: 15, fontWeight: "600"}}>{food.name}</Text>
           <Text>{food.price}</Text>
           <Text style={{ marginTop: 6}}>{
             [0, 0, 0, 0, 0].map((en, i) => (
@@ -15,7 +15,7 @@ const MenuComponent = ({food}) => {
             }
           </Text>
           <Text style={{ width: 180}}>
-            {food.description.length > 30 ? food.description.substr(0, 65) + "..." : food.description}
+            {food.description}
           </Text>
         </View>
 

@@ -22,7 +22,7 @@ const FoodItem = ({item}) => {
          <Pressable 
          onPress={() => handleItemSelect(item.name)}
          key={i} style={{ margin: 10, flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
-            <Text style={{ fontSize: 20, fontWeight: "bold"}}>{item.name}</Text>
+            <Text style={{ fontSize: 20, fontWeight: "bold"}}>{item.name} ({ item.items.length})</Text>
             <AntDesign name='down' size={24} color="black" />
          </Pressable>
 

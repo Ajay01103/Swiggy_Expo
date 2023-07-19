@@ -116,5 +116,3 @@ const FoodTypes = () => {
 }
 
 export default FoodTypes
-
-const styles = StyleSheet.create({})

@@ -6,6 +6,8 @@ import { View } from 'react-native';
 import { TextInput } from 'react-native';
 import { AntDesign } from '@expo/vector-icons'
 import MenuScreen from './screens/MenuScreen';
+import { Provider } from 'react-redux';
+import store from './store';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,10 +26,12 @@ function LogoTitle() {
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} options={{ headerTitle: (props) => <LogoTitle {...props} /> }} />
-        <Stack.Screen name='MenuScreen' component={MenuScreen} options={{ headerShown: false}} />
-      </Stack.Navigator>
+      <Provider store={store}>
+        <Stack.Navigator>
+          <Stack.Screen name="Home" component={HomeScreen} options={{ headerTitle: (props) => <LogoTitle {...props} /> }} />
+          <Stack.Screen name='Menu' component={MenuScreen} options={{ headerShown: false}} />
+        </Stack.Navigator>
+      </Provider>
     </NavigationContainer>
   );
 }

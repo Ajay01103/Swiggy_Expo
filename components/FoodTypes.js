@@ -1,7 +1,9 @@
-import { ScrollView, StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native'
+import { ScrollView, View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
+import { useNavigation } from '@react-navigation/native'
 
 const FoodTypes = () => {
+    const navigation = useNavigation()
     const types = [
         {
             id:"0",
@@ -90,7 +92,7 @@ const FoodTypes = () => {
         <Text style={{ fontSize: 16, fontWeight: "500"}}>What's on your mind</Text>
        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           {types.map((item, index) => (
-            <TouchableOpacity style={{margin: 10}} key={index}>
+            <TouchableOpacity onPress={() => navigation.navigate("Item")} style={{margin: 10}} key={index}>
                 <Image source={{ uri: item.image}} style={{ width: 70, height: 70, borderRadius: 30}} />
                 <Text style={{ marginTop: 6, textAlign: "center"}}>
                     {item.name}

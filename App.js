@@ -1,13 +1,13 @@
-import { ScrollView } from 'react-native';
 import HomeScreen from './screens/HomeScreen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
-import { View } from 'react-native';
+import { View, Image } from 'react-native';
 import { TextInput } from 'react-native';
 import { AntDesign } from '@expo/vector-icons'
 import MenuScreen from './screens/MenuScreen';
 import { Provider } from 'react-redux';
 import store from './store';
+import ItemScreen from './screens/ItemScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +22,14 @@ function LogoTitle() {
   );
 }
 
+function ItemTitle() {
+  return (
+    <View style={{ flexDirection: "row", width: 300, alignItems: "center", height: 80, padding: 18}}>
+      <Image style={{ width: 200, height: 42}} source={{ uri: "https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png" }} />
+    </View>
+  )
+}
+
 
 export default function App() {
   return (
@@ -30,6 +38,7 @@ export default function App() {
         <Stack.Navigator>
           <Stack.Screen name="Home" component={HomeScreen} options={{ headerTitle: (props) => <LogoTitle {...props} /> }} />
           <Stack.Screen name='Menu' component={MenuScreen} options={{ headerShown: false}} />
+          <Stack.Screen name='Item' component={ItemScreen} options={{ headerTitle: (props) => <ItemTitle {...props} /> }} />
         </Stack.Navigator>
       </Provider>
     </NavigationContainer>

@@ -17,7 +17,7 @@ export default [
                     {
                         id:"2",
                         name:"Paneer Tikka",
-                        price:"275 ₹",
+                        price:275,
                         description:"E: 723.82 Cal Delicious Paneer tikka tandoori Grilled",
                         rating:4.1,
                         ratings:43,
@@ -29,7 +29,7 @@ export default [
                     {
                         id:"3",
                         name:"Sanwich Grilled",
-                        price:"285 ₹",
+                        price:285,
                         description:"E: 604.42 Cal Sandwich Grilled with cheese and vegies",
                         rating:4.3,
                         ratings:34,
@@ -41,7 +41,7 @@ export default [
                     {
                         id:"4",
                         name:"Spring Rolls",
-                        price:"250 ₹",
+                        price:250,
                         description:"E: 1327.35 Cal Cheesy and crispy Spring Rolls with vegies",
                         rating:4.5,
                         ratings:56,
@@ -53,7 +53,7 @@ export default [
                     {
                         id:"5",
                         name:"Deluxe Thali",
-                        price:"320 ₹",
+                        price:320,
                         description:"E: 871.69 Cal Deluxe Thali for a complete balanced Diet",
                         rating:3.8,
                         ratings:22,
@@ -65,7 +65,7 @@ export default [
                     {
                         id:"6",
                         name:"Ghar Ki Thali",
-                        price:"300 ₹",
+                        price:300,
                         description:"E: 544.39 Cal Simple Veg thali for a complete and balanced diet",
                         rating:4.5,
                         ratings:45,
@@ -83,7 +83,7 @@ export default [
                     {
                         id:"8",
                         name:"Farmhouse Pizza",
-                        price:"260 ₹",
+                        price:260,
                         description:"E: 1142.26 Cal Farmhouse style Pizza with loaded cheese",
                         rating:4.3,
                         ratings:34,
@@ -94,7 +94,7 @@ export default [
                     {
                         id:"9",
                         name:"Alltime Cake",
-                        price:"220 ₹",
+                        price:220,
                         description:"E: 1729.51 All time Favourite cake with caramel and cream",
                         rating:4.3,
                         ratings:52,
@@ -105,7 +105,7 @@ export default [
                     {
                         id:"10",
                         name:"Loaded Burger",
-                        price:"190 ₹",
+                        price:190,
                         description:"E: 1477.00 Cal Cheesy Burger loaded with cheese, vegies and crispy patty",
                         rating:4.6,
                         ratings:56,
@@ -116,7 +116,7 @@ export default [
                     {
                         id:"11",
                         name:"Chinese Platter",
-                        price:"195 ₹",
+                        price:195,
                         description:"E: 1832.30 Cal Chinese Platter including Manchurian, momos, noodles and fries rice",
                         rating:4.5,
                         ratings:48,
@@ -127,7 +127,7 @@ export default [
                     {
                         id:"275",
                         name:"South Indian Platter",
-                        price:"195 ₹",
+                        price:185,
                         description:"E: 1832.30 Cal South Indian Platter filed with Idli, Dosa and more",
                         rating:4.5,
                         ratings:48,
@@ -157,7 +157,7 @@ export default [
                     {
                         id:"14",
                         name:"Paneer Tikka",
-                        price:"275 ₹",
+                        price:275,
                         description:"E: 723.82 Cal Delicious Paneer tikka tandoori Grilled",
                         rating:4.1,
                         ratings:43,
@@ -169,7 +169,7 @@ export default [
                     {
                         id:"15",
                         name:"Sanwich Grilled",
-                        price:"285 ₹",
+                        price:285,
                         description:"E: 604.42 Cal Sandwich Grilled with cheese and vegies",
                         rating:4.3,
                         ratings:34,
@@ -181,7 +181,7 @@ export default [
                     {
                         id:"16",
                         name:"Spring Rolls",
-                        price:"250 ₹",
+                        price:250,
                         description:"E: 1327.35 Cal Cheesy and crispy Spring Rolls with vegies",
                         rating:4.5,
                         ratings:56,
@@ -193,7 +193,7 @@ export default [
                     {
                         id:"17",
                         name:"Deluxe Thali",
-                        price:"320 ₹",
+                        price:320,
                         description:"E: 871.69 Cal Deluxe Thali for a complete balanced Diet",
                         rating:3.8,
                         ratings:22,
@@ -205,7 +205,7 @@ export default [
                     {
                         id:"18",
                         name:"Ghar Ki Thali",
-                        price:"300 ₹",
+                        price:300,
                         description:"E: 544.39 Cal Simple Veg thali for a complete and balanced diet",
                         rating:4.5,
                         ratings:45,
@@ -223,7 +223,7 @@ export default [
                     {
                         id:"20",
                         name:"Farmhouse Pizza",
-                        price:"260 ₹",
+                        price:260,
                         description:"E: 1142.26 Cal Farmhouse style Pizza with loaded cheese",
                         rating:4.3,
                         ratings:34,
@@ -234,7 +234,7 @@ export default [
                     {
                         id:"21",
                         name:"Alltime Cake",
-                        price:"220 ₹",
+                        price:220,
                         description:"E: 1729.51 All time Favourite cake with caramel and cream",
                         rating:4.3,
                         ratings:52,
@@ -245,7 +245,7 @@ export default [
                     {
                         id:"22",
                         name:"Loaded Burger",
-                        price:"190 ₹",
+                        price:190,
                         description:"E: 1477.00 Cal Cheesy Burger loaded with cheese, vegies and crispy patty",
                         rating:4.6,
                         ratings:56,
@@ -256,7 +256,7 @@ export default [
                     {
                         id:"23",
                         name:"Chinese Platter",
-                        price:"195 ₹",
+                        price:195,
                         description:"E: 1832.30 Cal Chinese Platter including Manchurian, momos, noodles and fries rice",
                         rating:4.5,
                         ratings:48,
@@ -267,7 +267,7 @@ export default [
                     {
                         id:"285",
                         name:"South Indian Platter",
-                        price:"195 ₹",
+                        price:185,
                         description:"E: 1832.30 Cal South Indian Platter filed with Idli, Dosa and more",
                         rating:4.5,
                         ratings:48,
@@ -298,7 +298,7 @@ export default [
                     {
                         id:"101",
                         name:"Paneer Tikka",
-                        price:"275 ₹",
+                        price:275,
                         description:"E: 723.82 Cal Delicious Paneer tikka tandoori Grilled",
                         rating:4.1,
                         ratings:43,
@@ -310,7 +310,7 @@ export default [
                     {
                         id:"102",
                         name:"Sanwich Grilled",
-                        price:"285 ₹",
+                        price:285,
                         description:"E: 604.42 Cal Sandwich Grilled with cheese and vegies",
                         rating:4.3,
                         ratings:34,
@@ -322,7 +322,7 @@ export default [
                     {
                         id:"103",
                         name:"Spring Rolls",
-                        price:"250 ₹",
+                        price:250,
                         description:"E: 1327.35 Cal Cheesy and crispy Spring Rolls with vegies",
                         rating:4.5,
                         ratings:56,
@@ -334,7 +334,7 @@ export default [
                     {
                         id:"104",
                         name:"Deluxe Thali",
-                        price:"320 ₹",
+                        price:320,
                         description:"E: 871.69 Cal Deluxe Thali for a complete balanced Diet",
                         rating:3.8,
                         ratings:22,
@@ -346,7 +346,7 @@ export default [
                     {
                         id:"105",
                         name:"Ghar Ki Thali",
-                        price:"300 ₹",
+                        price:300,
                         description:"E: 544.39 Cal Simple Veg thali for a complete and balanced diet",
                         rating:4.5,
                         ratings:45,
@@ -364,7 +364,7 @@ export default [
                     {
                         id:"201",
                         name:"Farmhouse Pizza",
-                        price:"260 ₹",
+                        price:260,
                         description:"E: 1142.26 Cal Farmhouse style Pizza with loaded cheese",
                         rating:4.3,
                         ratings:34,
@@ -375,7 +375,7 @@ export default [
                     {
                         id:"202",
                         name:"Alltime Cake",
-                        price:"220 ₹",
+                        price:220,
                         description:"E: 1729.51 All time Favourite cake with caramel and cream",
                         rating:4.3,
                         ratings:52,
@@ -386,7 +386,7 @@ export default [
                     {
                         id:"203",
                         name:"Loaded Burger",
-                        price:"190 ₹",
+                        price:190,
                         description:"E: 1477.00 Cal Cheesy Burger loaded with cheese, vegies and crispy patty",
                         rating:4.6,
                         ratings:56,
@@ -397,7 +397,7 @@ export default [
                     {
                         id:"204",
                         name:"Chinese Platter",
-                        price:"195 ₹",
+                        price:195,
                         description:"E: 1832.30 Cal Chinese Platter including Manchurian, momos, noodles and fries rice",
                         rating:4.5,
                         ratings:48,
@@ -408,7 +408,7 @@ export default [
                     {
                         id:"295",
                         name:"South Indian Platter",
-                        price:"195 ₹",
+                        price:195,
                         description:"E: 1832.30 Cal South Indian Platter filed with Idli, Dosa and more",
                         rating:4.5,
                         ratings:48,

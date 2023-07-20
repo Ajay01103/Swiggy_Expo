@@ -10,8 +10,11 @@ import Modal from "react-native-modal"
 import { useSelector } from 'react-redux'
 
 const MenuScreen = () => {
-  const cart = useSelector((state) => state.cart.cart)
-  const router = useRoute();  
+  const cart = useSelector((state) => state.cart.cart);
+  const total = cart.map((item) => item.price * item.quantity).reduce((curr, prev) => curr + prev, 0);
+  const router = useRoute();
+  console.log(cart);
+  console.log(total)  
   const navigation = useNavigation();
   const [menu, setMenu] = useState([]);
   const [modalVisible, setModalVisible] = useState(false)
@@ -110,6 +113,14 @@ const MenuScreen = () => {
             </View>
          </View>
       </Modal>
+
+      {total === 0 ? null : (
+        <Pressable style={{ backgroundColor: "#00AB77", width: "90%", padding: 14, marginLeft: "auto", marginRight: "auto", marginBottom: 30, position: "absolute", left: 20, bottom: 10}}>
+          <View>
+            <Text>{cart.length} items | {total}</Text>
+          </View>
+        </Pressable>
+      )}
     </>
   )
 }

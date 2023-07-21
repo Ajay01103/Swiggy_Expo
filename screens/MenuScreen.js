@@ -8,13 +8,13 @@ import FoodItem from '../components/FoodItem'
 import { useState, useEffect } from 'react'
 import Modal from "react-native-modal"
 import { useSelector } from 'react-redux'
+import { Feather } from '@expo/vector-icons';
+
 
 const MenuScreen = () => {
   const cart = useSelector((state) => state.cart.cart);
   const total = cart.map((item) => item.price * item.quantity).reduce((curr, prev) => curr + prev, 0);
-  const router = useRoute();
-  console.log(cart);
-  console.log(total)  
+  const router = useRoute(); 
   const navigation = useNavigation();
   const [menu, setMenu] = useState([]);
   const [modalVisible, setModalVisible] = useState(false)
@@ -115,9 +115,17 @@ const MenuScreen = () => {
       </Modal>
 
       {total === 0 ? null : (
-        <Pressable style={{ backgroundColor: "#00AB77", width: "90%", padding: 14, marginLeft: "auto", marginRight: "auto", marginBottom: 30, position: "absolute", left: 20, bottom: 10}}>
+        <Pressable onPress={() => navigation.navigate("Cart", {
+          name: router.params.name,
+        })}
+        style={{ backgroundColor: "#00AB77", alignItems: "center", borderRadius: 10, flexDirection: "row", justifyContent: "space-between", width: "90%", padding: 14, marginLeft: "auto", marginRight: "auto", marginBottom: 30, position: "absolute", left: 20, bottom: 10}}>
           <View>
-            <Text>{cart.length} items | {total}</Text>
+            <Text style={{ fontSize: 16, fontWeight: "700", color: "white"}}>{cart.length} items | {total} ₹</Text>
+            <Text style={{ fontSize: 14, color: "white"}}>Extra Charges may be Apply!</Text>
+          </View>
+
+          <View>
+          <Feather name="shopping-bag" size={24} color="white" />
           </View>
         </Pressable>
       )}

@@ -1,7 +1,6 @@
 import { View, Text, Image, Pressable, ScrollView, ImageBackground } from 'react-native'
 import { AntDesign } from "@expo/vector-icons"
 import { MaterialIcons } from "@expo/vector-icons"
-import { MaterialCommunityIcons } from "@expo/vector-icons"
 import { useNavigation } from '@react-navigation/native'
 
 const MenuItems = ({ item }) => {
@@ -92,7 +91,7 @@ const MenuItems = ({ item }) => {
               marginTop: 10,
             }}
           >
-            <MaterialCommunityIcons name="bike-fast" size={24} color="black" />
+            <MaterialIcons name="delivery-dining" size={28} color="black" />
             <Text style={{ marginLeft: 6, fontSize: 16 }}>FREE DELIVERY</Text>
           </View>
         </View>

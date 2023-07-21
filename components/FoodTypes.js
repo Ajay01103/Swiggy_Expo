@@ -93,7 +93,7 @@ const FoodTypes = () => {
        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           {types.map((item, index) => (
             <TouchableOpacity onPress={() => navigation.navigate("Item")} style={{margin: 10}} key={index}>
-                <Image source={{ uri: item.image}} style={{ width: 70, height: 70, borderRadius: 30}} />
+                <Image key={index} source={{ uri: item.image}} style={{ width: 70, height: 70, borderRadius: 30}} />
                 <Text style={{ marginTop: 6, textAlign: "center"}}>
                     {item.name}
                 </Text>
@@ -105,7 +105,7 @@ const FoodTypes = () => {
        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           {Brands.map((item, index) => (
             <TouchableOpacity style={{margin: 10}} key={index}>
-                <Image source={{ uri: item.image}} style={{ width: 70, height: 70, borderRadius: 30}} />
+                <Image key={index} source={{ uri: item.image}} style={{ width: 70, height: 70, borderRadius: 30}} />
                 <Text style={{ marginTop: 6, textAlign: "center"}}>
                     {item.name}
                 </Text>

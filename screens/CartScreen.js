@@ -1,13 +1,18 @@
-import { View, Text, ScrollView } from 'react-native'
+import { View, Text, ScrollView, Image, Pressable } from 'react-native'
 import React from 'react'
+import { Ionicons, FontAwesome5 } from "@expo/vector-icons";
 import { useNavigation, useRoute } from '@react-navigation/native'
 import { useSelector, useDispatch } from 'react-redux'
-import { Pressable } from 'react-native'
+import { decrementQuantity, incrementQuantity, removeFromCart } from '../redux/CartReducer'
 
 const CartScreen = () => {
     const navigation = useNavigation();
     const router = useRoute();
-    const cart = useSelector((state) => state.cart.cart)
+    const cart = useSelector((state) => state.cart.cart);
+    const total = cart
+    .map((item) => item.price * item.quantity)
+    .reduce((curr, prev) => curr + prev, 0);
+    const dispatch = useDispatch();
     const instructions = [
         {
           id: "0",
@@ -32,7 +37,9 @@ const CartScreen = () => {
     ];  
   return (
     <ScrollView>
-        <View>
+      {total > 0 ? (
+        <>
+          <View>
           <Text style={{ fontSize: 17, fontWeight: "700", marginLeft: 10, padding: 8}}>{router.params.name}</Text>
           <View style={{ padding: 15, backgroundColor: "white", borderRadius: 10, marginHorizontal: 10, borderColor: "gray", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
             <Text style={{ fontWeight: "500", fontSize: 14}}>Ordering for Someone else ?</Text>
@@ -52,7 +59,7 @@ const CartScreen = () => {
                   <Pressable>
                     <Text style={{ fontSize: 20, color: "black", paddingHorizontal: 6, fontWeight: "700"}}
                     onPress={() => {
-                      disp
+                     dispatch(decrementQuantity(item));
                     }}
                     >
                       -
@@ -65,26 +72,64 @@ const CartScreen = () => {
                     </Text>
                   </Pressable>
 
-                  <Pressable>
+                  <Pressable onPress={() => {
+                    dispatch(incrementQuantity(item))
+                  }}>
                     <Text style={{ fontSize: 19, color: "black", paddingHorizontal: 6, fontWeight: "600"}}>
                       +
                     </Text>
                   </Pressable>
                   </View>
 
-                  <Text>
-                  {item.price} ₹
+                  <Text style={{ fontSize: 15, fontWeight: "600"}}>
+                  {item.price * item.quantity} ₹
                   </Text>
-
                 </View>
               ))}
-                
-            </View>
-
-            <View>
-
             </View>
         </View>
+        
+        <View style={{ padding: 10, marginLeft: 6}}>
+          <Text style={{ fontSize: 16, fontWeight: "500"}}>
+            Delivery Instructions
+          </Text>
+
+          <ScrollView horizontal style={{ marginTop: 10}} showsHorizontalScrollIndicator={false}>
+            {instructions.map((item, i) => (
+              <Pressable key={i} style={{ margin: 10, borderRadius: 10, padding: 10, backgroundColor: "white"}}>
+                 <View style={{ flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
+                  <FontAwesome5 name={item.iconName} color="gray" size={24} />
+                  <Text style={{ width: 80, fontSize: 13, color: "#383838", paddingTop: 10, textAlign: "center"}}>
+                    {item.name}
+                  </Text>
+                 </View>
+              </Pressable>
+            ))}
+          </ScrollView>
+        </View>
+
+        <View style={{ marginHorizontal: 10}}>
+          <Text style={{ fontSize: 16, marginLeft: 6, fontWeight: "500"}}>
+            Billing Details
+          </Text>
+          <View style={{ backgroundColor: "white", borderRadius: 12, padding: 14, marginTop: 15, flexDirection: "row", alignItems: "center", justifyContent: "space-between",}}> 
+            <Text style={{ fontWeight: "500"}}>Total Items</Text>
+            <Text style={{ fontWeight: "500", fontSize: 17}}>{total} ₹</Text>
+          </View>
+        </View>
+
+        </>
+      ) : (
+        <View style={{ flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: "white"}}>
+          <Image style={{ width: 300, height: 300}} source={{ uri: "https://ik.imagekit.io/wwgqcjqcf/cart.jpg?updatedAt=1689936140576"}} />
+          <Text style={{ textAlign: "center", fontSize: 26, marginTop: 20, fontWeight: "600"}}>Your cart is empty!!</Text>
+          
+          <Text style={{ flex: 8, flexDirection: "row", padding: 14, textAlign: "center"}}>
+            Looks like you have'nt added anything to your cart
+          </Text>
+        </View>
+      )}
+        
     </ScrollView>
   )
 }

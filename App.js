@@ -25,7 +25,7 @@ function LogoTitle() {
 
 function ItemTitle() {
   return (
-    <View style={{ flexDirection: "row", width: 300, alignItems: "center", height: 80, padding: 18}}>
+    <View style={{ flexDirection: "row", width: 300, alignItems: "center", height: 80, padding: 18, marginLeft: 12}}>
       <Image style={{ width: 200, height: 42}} source={{ uri: "https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png" }} />
     </View>
   )

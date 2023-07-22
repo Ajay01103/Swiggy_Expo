@@ -1,6 +1,6 @@
 import { View, Text, ScrollView, Image, Pressable } from 'react-native'
 import React from 'react'
-import { Ionicons, FontAwesome5 } from "@expo/vector-icons";
+import { MaterialIcons, FontAwesome5 } from "@expo/vector-icons";
 import { useNavigation, useRoute } from '@react-navigation/native'
 import { useSelector, useDispatch } from 'react-redux'
 import { decrementQuantity, incrementQuantity, removeFromCart } from '../redux/CartReducer'
@@ -34,6 +34,11 @@ const CartScreen = () => {
           name: "Avoid Calling",
           iconName: "phone-alt",
         },
+        {
+          id: "4",
+          name: "Beware of Pet",
+          iconName: "dog"
+        }
     ];  
   return (
     <ScrollView>
@@ -112,9 +117,23 @@ const CartScreen = () => {
           <Text style={{ fontSize: 16, marginLeft: 6, fontWeight: "500"}}>
             Billing Details
           </Text>
-          <View style={{ backgroundColor: "white", borderRadius: 12, padding: 14, marginTop: 15, flexDirection: "row", alignItems: "center", justifyContent: "space-between",}}> 
-            <Text style={{ fontWeight: "500"}}>Total Items</Text>
-            <Text style={{ fontWeight: "500", fontSize: 17}}>{total} ₹</Text>
+          <View style={{ backgroundColor: "white", borderRadius: 12, padding: 14, marginTop: 15}}> 
+            <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
+              <Text style={{ fontWeight: "500"}}>Total Items</Text>
+              <Text style={{ fontWeight: "500", fontSize: 16}}>{total} ₹</Text>
+            </View>
+            <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
+              <Text style={{ fontWeight: "500"}}>Delivery Fee</Text>
+              <Text style={{ color: "#FF4500", fontSize: 16, padding: 2, fontWeight: "500"}}>Free</Text>
+            </View>
+            <View style={{ flexDirection: "row", padding: 2, alignItems: "center", justifyContent: "space-between" }}>
+              <Text style={{ fontWeight: "500"}}>Taxes</Text>
+              <Text style={{ fontWeight: "500", fontSize: 16 }}>{total * 12/100} ₹</Text>
+            </View>
+            <View style={{ flexDirection: "row", padding: 2, alignItems: "center", justifyContent: "space-between",}}>
+              <Text style={{ fontWeight: "500"}}>Total Price</Text>
+              <Text style={{ fontWeight: "500", fontSize: 16}}>{total + total * 12/100} ₹</Text>
+            </View>
           </View>
         </View>
 

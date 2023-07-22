@@ -3,7 +3,7 @@ import React from 'react'
 import { MaterialIcons, FontAwesome5 } from "@expo/vector-icons";
 import { useNavigation, useRoute } from '@react-navigation/native'
 import { useSelector, useDispatch } from 'react-redux'
-import { decrementQuantity, incrementQuantity, removeFromCart } from '../redux/CartReducer'
+import { cleanCart, decrementQuantity, incrementQuantity, removeFromCart } from '../redux/CartReducer'
 
 const CartScreen = () => {
     const navigation = useNavigation();
@@ -41,115 +41,141 @@ const CartScreen = () => {
         }
     ];  
   return (
-    <ScrollView>
-      {total > 0 ? (
-        <>
-          <View>
-          <Text style={{ fontSize: 17, fontWeight: "700", marginLeft: 10, padding: 8}}>{router.params.name}</Text>
-          <View style={{ padding: 15, backgroundColor: "white", borderRadius: 10, marginHorizontal: 10, borderColor: "gray", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
-            <Text style={{ fontWeight: "500", fontSize: 14}}>Ordering for Someone else ?</Text>
-            <Text style={{ fontWeight: "500", fontSize: 14, color: "#FF4500"}}>Add Details +</Text>
-          </View>
-        </View>
-
-        <View style={{ backgroundColor: "white", marginTop: 16, marginHorizontal: 15,  borderRadius: 10, padding: 14}}>
+    <>
+      <ScrollView>
+        {total > 0 ? (
+          <>
             <View>
-              {cart.map((item, i) => (
-                <View key={i} style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center"}}>
-                  <Text style={{ width: 120, fontSize: 16, fontWeight: "600"}}>
-                    {item.name}  
-                  </Text>
-
-                  <View style={{ flexDirection: "row", padding: 4}}>
-                  <Pressable>
-                    <Text style={{ fontSize: 20, color: "black", paddingHorizontal: 6, fontWeight: "700"}}
-                    onPress={() => {
-                     dispatch(decrementQuantity(item));
-                    }}
-                    >
-                      -
-                    </Text>
-                  </Pressable>
-
-                  <Pressable>
-                    <Text style={{ fontSize: 19, color: "black", paddingHorizontal: 7, fontWeight: "600"}}>
-                      {item.quantity}
-                    </Text>
-                  </Pressable>
-
-                  <Pressable onPress={() => {
-                    dispatch(incrementQuantity(item))
-                  }}>
-                    <Text style={{ fontSize: 19, color: "black", paddingHorizontal: 6, fontWeight: "600"}}>
-                      +
-                    </Text>
-                  </Pressable>
-                  </View>
-
-                  <Text style={{ fontSize: 15, fontWeight: "600"}}>
-                  {item.price * item.quantity} ₹
-                  </Text>
-                </View>
-              ))}
-            </View>
-        </View>
-        
-        <View style={{ padding: 10, marginLeft: 6}}>
-          <Text style={{ fontSize: 16, fontWeight: "500"}}>
-            Delivery Instructions
-          </Text>
-
-          <ScrollView horizontal style={{ marginTop: 10}} showsHorizontalScrollIndicator={false}>
-            {instructions.map((item, i) => (
-              <Pressable key={i} style={{ margin: 10, borderRadius: 10, padding: 10, backgroundColor: "white"}}>
-                 <View style={{ flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
-                  <FontAwesome5 name={item.iconName} color="gray" size={24} />
-                  <Text style={{ width: 80, fontSize: 13, color: "#383838", paddingTop: 10, textAlign: "center"}}>
-                    {item.name}
-                  </Text>
-                 </View>
-              </Pressable>
-            ))}
-          </ScrollView>
-        </View>
-
-        <View style={{ marginHorizontal: 10}}>
-          <Text style={{ fontSize: 16, marginLeft: 6, fontWeight: "500"}}>
-            Billing Details
-          </Text>
-          <View style={{ backgroundColor: "white", borderRadius: 12, padding: 14, marginTop: 15}}> 
-            <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
-              <Text style={{ fontWeight: "500"}}>Total Items</Text>
-              <Text style={{ fontWeight: "500", fontSize: 16}}>{total} ₹</Text>
-            </View>
-            <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
-              <Text style={{ fontWeight: "500"}}>Delivery Fee</Text>
-              <Text style={{ color: "#FF4500", fontSize: 16, padding: 2, fontWeight: "500"}}>Free</Text>
-            </View>
-            <View style={{ flexDirection: "row", padding: 2, alignItems: "center", justifyContent: "space-between" }}>
-              <Text style={{ fontWeight: "500"}}>Taxes</Text>
-              <Text style={{ fontWeight: "500", fontSize: 16 }}>{total * 12/100} ₹</Text>
-            </View>
-            <View style={{ flexDirection: "row", padding: 2, alignItems: "center", justifyContent: "space-between",}}>
-              <Text style={{ fontWeight: "500"}}>Total Price</Text>
-              <Text style={{ fontWeight: "500", fontSize: 16}}>{total + total * 12/100} ₹</Text>
+            <Text style={{ fontSize: 17, fontWeight: "700", marginLeft: 10, padding: 8}}>{router.params.name}</Text>
+            <View style={{ padding: 15, backgroundColor: "white", borderRadius: 10, marginHorizontal: 10, borderColor: "gray", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
+              <Text style={{ fontWeight: "500", fontSize: 14}}>Ordering for Someone else ?</Text>
+              <Text style={{ fontWeight: "500", fontSize: 14, color: "#FF4500"}}>Add Details +</Text>
             </View>
           </View>
-        </View>
 
-        </>
-      ) : (
-        <View style={{ flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: "white"}}>
-          <Image style={{ width: 300, height: 300}} source={{ uri: "https://ik.imagekit.io/wwgqcjqcf/cart.jpg?updatedAt=1689936140576"}} />
-          <Text style={{ textAlign: "center", fontSize: 26, marginTop: 20, fontWeight: "600"}}>Your cart is empty!!</Text>
+          <View style={{ backgroundColor: "white", marginTop: 16, marginHorizontal: 15,  borderRadius: 10, padding: 14}}>
+              <View>
+                {cart.map((item, i) => (
+                  <View key={i} style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center"}}>
+                    <Text style={{ width: 120, fontSize: 16, fontWeight: "600"}}>
+                      {item.name}  
+                    </Text>
+
+                    <View style={{ flexDirection: "row", padding: 4}}>
+                    <Pressable>
+                      <Text style={{ fontSize: 20, color: "black", paddingHorizontal: 6, fontWeight: "700"}}
+                      onPress={() => {
+                      dispatch(decrementQuantity(item));
+                      }}
+                      >
+                        -
+                      </Text>
+                    </Pressable>
+
+                    <Pressable>
+                      <Text style={{ fontSize: 19, color: "black", paddingHorizontal: 7, fontWeight: "600"}}>
+                        {item.quantity}
+                      </Text>
+                    </Pressable>
+
+                    <Pressable onPress={() => {
+                      dispatch(incrementQuantity(item))
+                    }}>
+                      <Text style={{ fontSize: 19, color: "black", paddingHorizontal: 6, fontWeight: "600"}}>
+                        +
+                      </Text>
+                    </Pressable>
+                    </View>
+
+                    <Text style={{ fontSize: 15, fontWeight: "600"}}>
+                    {item.price * item.quantity} ₹
+                    </Text>
+                  </View>
+                ))}
+              </View>
+          </View>
           
-          <Text style={{ flex: 8, flexDirection: "row", padding: 14, textAlign: "center"}}>
-            Looks like you have'nt added anything to your cart
-          </Text>
-        </View>
+          <View style={{ padding: 10, marginLeft: 6}}>
+            <Text style={{ fontSize: 16, fontWeight: "500"}}>
+              Delivery Instructions
+            </Text>
+
+            <ScrollView horizontal style={{ marginTop: 10}} showsHorizontalScrollIndicator={false}>
+              {instructions.map((item, i) => (
+                <Pressable key={i} style={{ margin: 10, borderRadius: 10, padding: 10, backgroundColor: "white"}}>
+                  <View style={{ flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
+                    <FontAwesome5 name={item.iconName} color="gray" size={24} />
+                    <Text style={{ width: 80, fontSize: 13, color: "#383838", paddingTop: 10, textAlign: "center"}}>
+                      {item.name}
+                    </Text>
+                  </View>
+                </Pressable>
+              ))}
+            </ScrollView>
+          </View>
+
+          <View style={{ marginHorizontal: 10}}>
+            <Text style={{ fontSize: 16, marginLeft: 6, fontWeight: "500"}}>
+              Billing Details
+            </Text>
+            <View style={{ backgroundColor: "white", borderRadius: 12, padding: 14, marginTop: 15}}> 
+              <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
+                <Text style={{ fontWeight: "500"}}>Total Items</Text>
+                <Text style={{ fontWeight: "500", fontSize: 16}}>{total} ₹</Text>
+              </View>
+              <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
+                <Text style={{ fontWeight: "500"}}>Delivery Fee</Text>
+                <Text style={{ color: "#FF4500", fontSize: 16, padding: 2, fontWeight: "500"}}>Free</Text>
+              </View>
+              <View style={{ flexDirection: "row", padding: 2, alignItems: "center", justifyContent: "space-between" }}>
+                <Text style={{ fontWeight: "500"}}>Taxes</Text>
+                <Text style={{ fontWeight: "500", fontSize: 16 }}>{total * 12/100} ₹</Text>
+              </View>
+              <View style={{ flexDirection: "row", padding: 2, alignItems: "center", justifyContent: "space-between"}}>
+                <Text style={{ fontWeight: '500'}}>Tip</Text>
+                <Text style={{ fontSize: 15, fontWeight: "500", color: "#FF4500"}}>ADD</Text>
+              </View>
+              <View style={{ borderColor: "gray", height: 1, borderWidth: 0.5, marginTop: 4 }} />
+              <View style={{ flexDirection: "row", padding: 2, marginTop: 2, alignItems: "center", justifyContent: "space-between",}}>
+                <Text style={{ fontWeight: "500"}}>Total Price</Text>
+                <Text style={{ fontWeight: "500", fontSize: 16}}>{total + total * 12/100} ₹</Text>
+              </View>
+
+            </View>
+          </View>
+
+          </>
+        ) : (
+          <View style={{ flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: "white"}}>
+            <Image style={{ width: 300, height: 300}} source={{ uri: "https://ik.imagekit.io/wwgqcjqcf/cart.jpg?updatedAt=1689936140576"}} />
+            <Text style={{ textAlign: "center", fontSize: 26, marginTop: 20, fontWeight: "600"}}>Your cart is empty!!</Text>
+            
+            <Text style={{ flex: 8, flexDirection: "row", padding: 14, textAlign: "center"}}>
+              Looks like you have'nt added anything to your cart
+            </Text>
+          </View>
+        )}
+      </ScrollView>
+
+      {total === 0 ? null : (
+        <Pressable style={{ flexDirection: "row", backgroundColor: "white", alignItems: "center", justifyContent: "space-between", padding: 2}}>
+          <View style={{ padding: 4, marginLeft: 3}}>
+            <Text style={{ fontWeight: "500"}}>{total + total * 12/100} ₹</Text>
+            <Text style={{ color: "#00A877"}}>View Detailed Summary</Text>
+          </View>
+
+          <Pressable 
+          onPress={() => {
+            navigation.navigate("Loading");
+            dispatch(cleanCart());
+          }}
+          style={{ backgroundColor: "#00A877", width: 180, padding: 14, borderRadius: 8}}>
+            <Text style={{ textAlign: "center", color: "white", fontWeight: "800", fontSize: 15}}>Proceed To Pay</Text>
+          </Pressable>
+        </Pressable>
       )}
-        
-    </ScrollView>
+
+    </>
   )
 }
 

@@ -9,6 +9,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 import ItemScreen from './screens/ItemScreen';
 import CartScreen from './screens/CartScreen';
+import LoadingScreen from "./screens/LoadingScreen"
 
 const Stack = createNativeStackNavigator();
 
@@ -41,6 +42,7 @@ export default function App() {
           <Stack.Screen name='Menu' component={MenuScreen} options={{ headerShown: false}} />
           <Stack.Screen name='Item' component={ItemScreen} options={{ headerTitle: (props) => <ItemTitle {...props} /> }} />
           <Stack.Screen name='Cart' component={CartScreen} options={{ headerTitle: (props) => <ItemTitle {...props} />, headerShadowVisible: false}} />
+          <Stack.Screen name='Loading' component={LoadingScreen} options={{ headerTitle: (props) => <ItemTitle {...props} />, headerShadowVisible: false}} />
         </Stack.Navigator>
       </Provider>
     </NavigationContainer>

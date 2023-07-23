@@ -3,7 +3,7 @@ import React from 'react'
 
 const ItemScreen = () => {
   return (
-    <View style={{ width: 120, height: 120, backgroundColor: "red"}}>
+    <View>
       <Text>items Screen</Text>
     </View>
   )
